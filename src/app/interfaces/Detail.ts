@@ -7,4 +7,5 @@ export interface Detail{
     answer?: string;
     answer2?: string;
     checked?: boolean;
+    imgLink?: string;
 }

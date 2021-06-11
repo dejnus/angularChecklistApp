@@ -35,7 +35,7 @@
       "parentId": 1,
       "type": "question",
       "header": "How long is it?",
-      "answer": ""
+      "answer": "it is 5cm"
     },
     {
       "id": 2,
@@ -57,6 +57,20 @@
       "type": "check",
       "header": "Is it ok?",
       "checked": false
+    },
+    {
+      "id": 6,
+      "parentId": 3,
+      "type": "question",
+      "header": "How long is it?",
+      "checked": false
+    },
+    {
+      "id": 7,
+      "parentId": 3,
+      "type": "image",
+      "header": "Is that a crane?",
+      "imgLink": "https://www.ivtinternational.com/wp-content/uploads/2019/05/lead_mani-web.gif"
     },
     {
       "parentId": 1,
