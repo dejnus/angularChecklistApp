@@ -1,0 +1,6 @@
+<app-add-project (onAddProject)="addProject($event)"></app-add-project>
+<app-project-item 
+    *ngFor="let project of projects" [project]="project"
+    (onDeleteProject)="deleteProject(project)"
+    routerLink="/details/{{project.id}}">
+</app-project-item>

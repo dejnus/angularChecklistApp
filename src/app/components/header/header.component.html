@@ -1,0 +1,9 @@
+<header>
+    <h1>{{title}}</h1>
+    <app-button 
+        *ngIf="hasRoute('/')"
+        color="green" 
+        text="Add" 
+        (btnClick)="toggleAddProject()">
+    </app-button>
+</header>

@@ -1,0 +1,15 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" name="title" [(ngModel)]="title" id="title" placeholder="Project Title">
+    </div>
+    <div class="form-control">
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="name" id="name" placeholder="Project Name">
+    </div>
+    <div class="form-control">
+        <label for="series">Series</label>
+        <input type="text" name="series" [(ngModel)]="series" id="series" placeholder="Series">
+    </div>
+    <input type="submit" value="Add Project" class="btn btn-block">
+</form>

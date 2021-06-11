@@ -1,0 +1,11 @@
+<app-button
+color="Blue" 
+text="Back" 
+routerLink="/">
+</app-button>
+<app-add-detail (onAddDetail)="addDetail($event)"></app-add-detail>
+<h1>Questionnaire for: {{project.title}}</h1>
+<app-detail-item
+    *ngFor="let detail of details" [detail]="detail"
+    >
+</app-detail-item>

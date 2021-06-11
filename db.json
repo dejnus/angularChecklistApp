@@ -1,0 +1,68 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Liebherr",
+      "name": "Bleh",
+      "series": 1,
+      "finished": false
+    },
+    {
+      "id": 2,
+      "title": "Ruthman",
+      "name": "Rleh",
+      "series": 12,
+      "finished": true
+    },
+    {
+      "id": 3,
+      "title": "Manitowoc",
+      "name": "Mleh",
+      "series": 7,
+      "finished": false
+    },
+    {
+      "title": "Test",
+      "name": "test",
+      "series": "2",
+      "finished": false,
+      "id": 4
+    }
+  ],
+  "details": [
+    {
+      "id": 1,
+      "parentId": 1,
+      "type": "question",
+      "header": "How long is it?",
+      "answer": ""
+    },
+    {
+      "id": 2,
+      "parentId": 1,
+      "type": "question",
+      "header": "What angle?",
+      "answer": ""
+    },
+    {
+      "id": 3,
+      "parentId": 2,
+      "type": "question",
+      "header": "How long is it?",
+      "answer": ""
+    },
+    {
+      "id": 4,
+      "parentId": 2,
+      "type": "check",
+      "header": "Is it ok?",
+      "checked": false
+    },
+    {
+      "parentId": 1,
+      "type": "question",
+      "header": "TEST",
+      "id": 5
+    }
+  ]
+}

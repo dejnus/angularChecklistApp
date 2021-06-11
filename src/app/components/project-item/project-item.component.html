@@ -1,0 +1,12 @@
+<div class="task">
+    <h3>
+        {{project.title}} 
+        <fa-icon 
+            [ngStyle]="{color: 'red'}" 
+            [icon]="faTimes"
+            (click)="onDelete(project)">
+        </fa-icon>
+    </h3>
+    <p>{{project.name}}</p>
+    <p>{{project.series}}</p>
+</div>

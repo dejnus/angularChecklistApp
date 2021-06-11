@@ -1,0 +1,7 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="header">Question</label>
+        <input type="text" name="header" [(ngModel)]="header" id="header" placeholder="Question">
+    </div>
+    <input type="submit" value="Add to Questionnaire" class="btn btn-block">
+</form>
