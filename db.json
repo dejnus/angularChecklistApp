@@ -77,6 +77,12 @@
       "type": "question",
       "header": "TEST",
       "id": 5
+    },
+    {
+      "parentId": 3,
+      "type": "check",
+      "header": "Is it okay?",
+      "id": 8
     }
   ]
 }

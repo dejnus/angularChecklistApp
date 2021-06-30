@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Detail } from '../../interfaces/Detail';
 import { ActivatedRoute } from '@angular/router';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-detail',
@@ -18,13 +20,23 @@ export class AddDetailComponent implements OnInit {
   answer: string = "";
   answer2: string = "";
   checked: boolean = false;
+  showAddDetail!: boolean;
+  subscription: Subscription;
+  showQuestion: boolean=false;
+  showCheck: boolean=false;
+  showImage: boolean=false;
+  questionButtonName: string = "Question";
+  checkButtonName: string = "Check";
+  imageButtonName: string = "Image";
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private uiService: UiService, private route: ActivatedRoute) {
+    this.subscription = this.uiService.onToggle().subscribe((value) => (this.showAddDetail = value));
+   }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmitQuestion(){
     if(!this.header){
       alert('Please add a question');
       return;
@@ -39,6 +51,37 @@ export class AddDetailComponent implements OnInit {
     this.onAddDetail.emit(newDetail);
 
     this.header ='';
+  }
+  onSubmitCheck(){
+    if(!this.header){
+      alert('Please add a question');
+      return;
+    }
+    
+    const newDetail: Detail= {
+      parentId : this.parentId = Number(this.route.snapshot.paramMap.get('id')),
+      type: "check",
+      header: this.header
+    }
+
+    this.onAddDetail.emit(newDetail);
+
+    this.header ='';
+  }
+  onSubmitImage(){
+  }
+
+  toggleQuestion(){
+    this.showQuestion = !this.showQuestion;
+    this.showQuestion ? this.questionButtonName = "Close" : this.questionButtonName = "Question";
+  }
+  toggleCheck(){
+    this.showCheck = !this.showCheck;
+    this.showCheck ? this.checkButtonName = "Close" : this.checkButtonName = "Check";
+  }
+  toggleImage(){
+    this.showImage = !this.showImage;
+    this.showImage ? this.imageButtonName = "Close" : this.imageButtonName = "Image";
   }
 
 }

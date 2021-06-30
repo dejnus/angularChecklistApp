@@ -1,7 +1,26 @@
-<form class="add-form" (ngSubmit)="onSubmit()">
-    <div class="form-control">
-        <label for="header">Question</label>
-        <input type="text" name="header" [(ngModel)]="header" id="header" placeholder="Question">
-    </div>
-    <input type="submit" value="Add to Questionnaire" class="btn btn-block">
-</form>
+<div *ngIf="showAddDetail">
+    <button class="btn btn-block" (click)="toggleQuestion()" *ngIf="!showCheck&&!showImage">{{questionButtonName}}</button>
+    <button class="btn btn-block" (click)="toggleCheck()" *ngIf="!showQuestion&&!showImage">{{checkButtonName}}</button>
+    <button class="btn btn-block" (click)="toggleImage()" *ngIf="!showQuestion&&!showCheck">{{imageButtonName}}</button>
+    <form class="add-form" (ngSubmit)="onSubmitQuestion()" *ngIf="showQuestion">
+        <div class="form-control">
+            <label for="header">Question</label>
+            <input type="text" name="header" [(ngModel)]="header" id="header" placeholder="Question">
+        </div>
+        <input type="submit" value="Add to Questionnaire" class="btn btn-block">
+    </form>
+    <form class="add-form" (ngSubmit)="onSubmitCheck()" *ngIf="showCheck">
+        <div class="form-control">
+            <label for="header">Question</label>
+            <input type="text" name="header" [(ngModel)]="header" id="header" placeholder="Question">
+        </div>
+        <input type="submit" value="Add to Questionnaire" class="btn btn-block">
+    </form>
+    <form class="add-form" (ngSubmit)="onSubmitImage()" *ngIf="showImage">
+        <div class="form-control">
+            <label for="header">Question</label>
+            <input type="text" name="header" [(ngModel)]="header" id="header" placeholder="Question">
+        </div>
+        <input type="submit" value="Add to Questionnaire" class="btn btn-block">
+    </form>
+</div>

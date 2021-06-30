@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Project} from '../../interfaces/Project';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-project',
@@ -14,7 +16,12 @@ export class AddProjectComponent implements OnInit {
   name!: string;
   series!: number;
   finished: boolean = false;
-  constructor() { }
+  showAddTask!: boolean;
+  subscription: Subscription;
+
+  constructor(private uiService: UiService) {
+      this.subscription = this.uiService.onToggle().subscribe((value) => (this.showAddTask = value));
+   }
 
   ngOnInit(): void {
   }

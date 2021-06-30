@@ -4,6 +4,7 @@
     </h3>
     <label for="answer">Answer:</label>
     <input type="text" name="answer" placeholder="{{detail.answer}}" [disabled]="true">
+    <button type="button" class="btn btn-block">Edit</button>
 </div>
 <div class="detail" *ngIf="detail.type === 'check'">
     <h3>
@@ -18,4 +19,5 @@
     <img src={{detail.imgLink}} width="400" height="200">
     <label for="answer">Answer:</label>
     <input type="text" name="answer" placeholder="{{detail.answer}}">
+    <button type="button" class="btn btn-block">Edit</button>
 </div>
