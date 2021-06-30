@@ -1,17 +1,17 @@
-<div class="task" *ngIf="detail.type === 'question'">
+<div class="detail" *ngIf="detail.type === 'question'">
     <h3>
         {{detail.header}} 
     </h3>
     <label for="answer">Answer:</label>
     <input type="text" name="answer" placeholder="{{detail.answer}}" [disabled]="true">
 </div>
-<div class="task" *ngIf="detail.type === 'check'">
+<div class="detail" *ngIf="detail.type === 'check'">
     <h3>
         {{detail.header}} 
     </h3>
     <input type="checkbox"  [checked]="detail.checked">
 </div>
-<div class="task" *ngIf="detail.type === 'image'">
+<div class="detail" *ngIf="detail.type === 'image'">
     <h3>
         {{detail.header}} 
     </h3>
