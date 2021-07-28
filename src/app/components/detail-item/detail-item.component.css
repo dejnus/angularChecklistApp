@@ -10,3 +10,8 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.detail img{
+    max-width: 385px;
+    height: auto;
+}

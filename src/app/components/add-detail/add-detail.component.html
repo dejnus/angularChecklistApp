@@ -4,22 +4,24 @@
     <button class="btn btn-block" (click)="toggleImage()" *ngIf="!showQuestion&&!showCheck">{{imageButtonName}}</button>
     <form class="add-form" (ngSubmit)="onSubmitQuestion()" *ngIf="showQuestion">
         <div class="form-control">
-            <label for="header">Question</label>
+            <label for="header">Question label</label>
             <input type="text" name="header" [(ngModel)]="header" id="header" placeholder="Question">
         </div>
         <input type="submit" value="Add to Questionnaire" class="btn btn-block">
     </form>
     <form class="add-form" (ngSubmit)="onSubmitCheck()" *ngIf="showCheck">
         <div class="form-control">
-            <label for="header">Question</label>
+            <label for="header">Check label</label>
             <input type="text" name="header" [(ngModel)]="header" id="header" placeholder="Question">
         </div>
         <input type="submit" value="Add to Questionnaire" class="btn btn-block">
     </form>
     <form class="add-form" (ngSubmit)="onSubmitImage()" *ngIf="showImage">
         <div class="form-control">
-            <label for="header">Question</label>
+            <label for="header">Image label</label>
             <input type="text" name="header" [(ngModel)]="header" id="header" placeholder="Question">
+            <label for="imgLink">Link</label>
+            <input type="text" name="imgLink" [(ngModel)]="imgLink" id="imgLink" placeholder="Image Link">
         </div>
         <input type="submit" value="Add to Questionnaire" class="btn btn-block">
     </form>

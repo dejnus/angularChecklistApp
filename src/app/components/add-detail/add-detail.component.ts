@@ -28,6 +28,7 @@ export class AddDetailComponent implements OnInit {
   questionButtonName: string = "Question";
   checkButtonName: string = "Check";
   imageButtonName: string = "Image";
+  imgLink: string = "";
 
   constructor(private uiService: UiService, private route: ActivatedRoute) {
     this.subscription = this.uiService.onToggle().subscribe((value) => (this.showAddDetail = value));
@@ -69,6 +70,15 @@ export class AddDetailComponent implements OnInit {
     this.header ='';
   }
   onSubmitImage(){
+    const newDetail: Detail= {
+      parentId : this.parentId = Number(this.route.snapshot.paramMap.get('id')),
+      type: "image",
+      header: this.header,
+      imgLink: this.imgLink
+    }
+    this.onAddDetail.emit(newDetail);
+
+    this.header ='';
   }
 
   toggleQuestion(){

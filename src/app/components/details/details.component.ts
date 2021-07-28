@@ -27,4 +27,8 @@ export class DetailsComponent implements OnInit {
     this.detailService.addDetail(detail).subscribe((detail)=> (this.details.push(detail)));
   }
 
+  deleteDetail (detail: Detail){
+    this.detailService.deleteDetail(detail).subscribe(()=> (this.details = this.details.filter(d => d.id !== detail.id)));
+  }
+
 }

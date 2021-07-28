@@ -1,23 +1,29 @@
-<div class="detail" *ngIf="detail.type === 'question'">
-    <h3>
-        {{detail.header}} 
-    </h3>
-    <label for="answer">Answer:</label>
-    <input type="text" name="answer" placeholder="{{detail.answer}}" [disabled]="true">
-    <button type="button" class="btn btn-block">Edit</button>
-</div>
-<div class="detail" *ngIf="detail.type === 'check'">
-    <h3>
-        {{detail.header}} 
-    </h3>
-    <input type="checkbox"  [checked]="detail.checked">
-</div>
-<div class="detail" *ngIf="detail.type === 'image'">
-    <h3>
-        {{detail.header}} 
-    </h3>
-    <img src={{detail.imgLink}} width="400" height="200">
-    <label for="answer">Answer:</label>
-    <input type="text" name="answer" placeholder="{{detail.answer}}">
-    <button type="button" class="btn btn-block">Edit</button>
+<div class="detail">
+    <div>
+        <h3>
+            {{detail.header}} 
+            <fa-icon 
+                [ngStyle]="{color: 'red'}" 
+                [icon]="faTimes"
+                (click)="onDelete(detail)">
+            </fa-icon>
+        </h3>
+        
+    </div>
+    <div *ngIf="detail.type === 'question'">
+        <label for="answer">Answer:</label>
+        <input type="text" name="answer" placeholder="{{detail.answer}}" [disabled]="true">
+        <button type="button" class="btn btn-block">Edit</button>
+    </div>
+    <div *ngIf="detail.type === 'check'">
+        <input type="checkbox"  [checked]="detail.checked">
+    </div>
+    <div *ngIf="detail.type === 'image'">
+        <a href={{detail.imgLink}} target="_blank">
+        <img src={{detail.imgLink}}>
+        </a>
+        <label for="answer">Answer:</label>
+        <input type="text" name="answer" placeholder="{{detail.answer}}">
+        <button type="button" class="btn btn-block">Edit</button>
+    </div>
 </div>

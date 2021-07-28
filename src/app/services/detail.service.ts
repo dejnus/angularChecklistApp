@@ -29,4 +29,8 @@ export class DetailService {
   addDetail(detail: Detail): Observable<Detail>{
     return this.http.post<Detail>(this.apiUrl, detail, httpOptions);
   }
+  deleteDetail(detail: Detail): Observable<Detail>{
+    const url = `${this.apiUrl}/${detail.id}`;
+    return this.http.delete<Detail>(url);
+  }
 }

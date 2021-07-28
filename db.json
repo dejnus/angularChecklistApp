@@ -20,13 +20,6 @@
       "name": "Mleh",
       "series": 7,
       "finished": false
-    },
-    {
-      "title": "Test",
-      "name": "test",
-      "series": "2",
-      "finished": false,
-      "id": 4
     }
   ],
   "details": [
@@ -59,13 +52,6 @@
       "checked": false
     },
     {
-      "id": 6,
-      "parentId": 3,
-      "type": "question",
-      "header": "How long is it?",
-      "checked": false
-    },
-    {
       "id": 7,
       "parentId": 3,
       "type": "image",
@@ -83,6 +69,19 @@
       "type": "check",
       "header": "Is it okay?",
       "id": 8
+    },
+    {
+      "parentId": 1,
+      "type": "question",
+      "header": "Is it okay?",
+      "id": 9
+    },
+    {
+      "parentId": 1,
+      "type": "image",
+      "header": "Baby yoda",
+      "imgLink": "https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+      "id": 10
     }
   ]
 }
