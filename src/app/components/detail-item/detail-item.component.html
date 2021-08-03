@@ -11,9 +11,10 @@
         
     </div>
     <div *ngIf="detail.type === 'question'">
-        <label for="answer">Answer:</label>
-        <input type="text" name="answer" placeholder="{{detail.answer}}" [disabled]="true">
-        <button type="button" class="btn btn-block">Edit</button>
+        <label for="answer">Answer: </label>
+        <input type="text" [(ngModel)]="answer" value="{{detail.answer}}" [disabled]="!showEditDetail">
+        <button type="button" class="btn btn-block" (click)="toggleEditDetail()">{{editButtonName}}</button>
+        <button type="button" class="btn btn-block" (click)="onCancel(detail)" *ngIf="showCancel">Cancel</button>
     </div>
     <div *ngIf="detail.type === 'check'">
         <input type="checkbox"  [checked]="detail.checked">
@@ -22,8 +23,9 @@
         <a href={{detail.imgLink}} target="_blank">
         <img src={{detail.imgLink}}>
         </a>
-        <label for="answer">Answer:</label>
-        <input type="text" name="answer" placeholder="{{detail.answer}}">
-        <button type="button" class="btn btn-block">Edit</button>
+        <label for="answer">Answer: </label>
+        <input type="text" value="{{detail.answer}}" [disabled]="!showEditDetail">
+        <button type="button" class="btn btn-block" (click)="toggleEditDetail()">{{editButtonName}}</button>
+        <button type="button" class="btn btn-block" (click)="onCancel(detail)" *ngIf="showCancel">Cancel</button>
     </div>
 </div>

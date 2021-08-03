@@ -8,6 +8,7 @@ export class UiService {
 
   private showAddTask: boolean = false;
   private showAddDetail: boolean = false;
+  private showEditDetail: boolean = false;
   private subject = new Subject<any>();
 
   constructor() { }
