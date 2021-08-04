@@ -7,5 +7,6 @@ routerLink="/">
 <h2>Questionnaire for: {{project.title}}</h2>
 <app-detail-item
     *ngFor="let detail of details" [detail]="detail"
-    (onDeleteDetail)="deleteDetail(detail)">
+    (onDeleteDetail)="deleteDetail(detail)"
+    (onPatchDetail)="patchDetail(detail)">
 </app-detail-item>

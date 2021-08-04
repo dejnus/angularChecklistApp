@@ -31,4 +31,8 @@ export class DetailsComponent implements OnInit {
     this.detailService.deleteDetail(detail).subscribe(()=> (this.details = this.details.filter(d => d.id !== detail.id)));
   }
 
+  patchDetail (detail: Detail){
+    this.detailService.patchDetail(detail).subscribe((detail)=> (this.details.find(d => d.id == detail.id)!.answer = detail.answer));
+  }
+
 }

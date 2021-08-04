@@ -33,4 +33,8 @@ export class DetailService {
     const url = `${this.apiUrl}/${detail.id}`;
     return this.http.delete<Detail>(url);
   }
+  patchDetail(detail: Detail): Observable<Detail>{
+    const url = `${this.apiUrl}/${detail.id}`;
+    return this.http.patch<Detail>(url, detail.answer, httpOptions);
+  }
 }

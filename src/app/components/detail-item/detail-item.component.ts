@@ -11,6 +11,7 @@ export class DetailItemComponent implements OnInit {
 
   @Input() detail!: Detail;
   @Output() onDeleteDetail: EventEmitter<Detail> = new EventEmitter;
+  @Output() onPatchDetail: EventEmitter<Detail> = new EventEmitter;
   faTimes = faTimes;
   value:string = "";
   showEditDetail: boolean = false;
@@ -30,12 +31,12 @@ export class DetailItemComponent implements OnInit {
     if(confirm("Are you sure to delete - "+detail.header))
     this.onDeleteDetail.emit(detail);
   }
-  toggleEditDetail(){
+  toggleEditDetail(detail: Detail){
     this.showEditDetail = !this.showEditDetail;
     this.showEditDetail ? this.editButtonName = "Accept" : this.editButtonName = "Edit";
     this.showCancel = !this.showCancel;
     if (this.showEditDetail == false){
-      console.log("post");
+      this.onPatchDetail.emit(detail);
     }
   }
 

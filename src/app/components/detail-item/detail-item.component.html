@@ -13,7 +13,7 @@
     <div *ngIf="detail.type === 'question'">
         <label for="answer">Answer: </label>
         <input type="text" [(ngModel)]="answer" value="{{detail.answer}}" [disabled]="!showEditDetail">
-        <button type="button" class="btn btn-block" (click)="toggleEditDetail()">{{editButtonName}}</button>
+        <button type="button" class="btn btn-block" (click)="toggleEditDetail(detail)">{{editButtonName}}</button>
         <button type="button" class="btn btn-block" (click)="onCancel(detail)" *ngIf="showCancel">Cancel</button>
     </div>
     <div *ngIf="detail.type === 'check'">
@@ -25,7 +25,7 @@
         </a>
         <label for="answer">Answer: </label>
         <input type="text" value="{{detail.answer}}" [disabled]="!showEditDetail">
-        <button type="button" class="btn btn-block" (click)="toggleEditDetail()">{{editButtonName}}</button>
+        <button type="button" class="btn btn-block" (click)="toggleEditDetail(detail)">{{editButtonName}}</button>
         <button type="button" class="btn btn-block" (click)="onCancel(detail)" *ngIf="showCancel">Cancel</button>
     </div>
 </div>
